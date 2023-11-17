@@ -1,0 +1,219 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block cart_content %}
+
+<main class="main-content">
+    <div class="breadcrumb-area breadcrumb-height"
+         data-bg-image="~/customersassets/images/breadcrumb/bg/1-1-1920x373.jpg">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-item">
+                        <h2 class="breadcrumb-heading">
+                            Thông tin liên hệ
+                        </h2>
+                        <ul>
+                            <li>
+                                <a href="/">
+                                    Home
+                                    <i class="pe-7s-angle-right"></i>
+                                </a>
+                            </li>
+                            <li>Thông tin liên hệ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Begin Shipping Area -->
+    <div id="container-content">
+        <div id="content">
+
+            <div class="content-section">
+                <div class="content-heading">
+                    <img src="./assets/img/title_base.webp" alt="" class="about-heading"></img>
+                    <h2 class="about-heading-1">GỬI THÔNG TIN CHO CHÚNG TÔI</h2>
+                    <p class="about-text">Hãy liên hệ ngay với chúng tôi để nhận được nhiều ưu đãi hấp dẫn dành cho bạn!</p>
+                </div>
+            </div>
+            <div class="content-address">
+                <div class="list-address">
+                    <div class="items-address">
+                        <a href="" class="items-knot"><i class="icons-items ti-location-pin"></i></a>
+                        <p class="text-items">Địa chỉ: thôn Sơn Tân, xã Sơn Bình, huyện Châu Đức, RR-VT, Vietnam</p>
+                    </div>
+
+                    <div class="items-address">
+                        <a href="" class="items-knot"><i class="icons-items ti-email"></i></a>
+                        <p class="text-items">Email: tranvanchuong7272@gmail.com</p>
+                    </div>
+
+                    <div class="items-address">
+                        <a href="" class="items-knot"><i class="icons-items ti-mobile"></i></a>
+                        <p class="text-items">Hotline: 1900 0000</p>
+                    </div>
+                </div>
+                <div class="content-ip">
+                    <div class="input-list">
+                        <input type="text" placeholder="Họ và tên*" class="ip-content">
+                    </div>
+                    <div class="input-list">
+                        <input type="text" placeholder="Emaill*" class="ip-content">
+                    </div>
+                    <div class="input-list">
+                        <input type="text" placeholder="Điện thoại*" class="ip-content">
+                    </div>
+                    <div class="input-list">
+                        <textarea id="" class="text" name="comment" rows="5" placeholder="Nội dung*" reqiured></textarea>
+                    </div>
+                    <div class="input-list">
+                        <button class="content-btn">Gửi thông tin</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Shipping Area End Here -->
+
+    <div class="contact-with-map">
+        <div class="contact-map">
+            <iframe class="contact-map-size"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1613802584124!5m2!1sen!2sbd"
+                    allowfullscreen=""
+                    loading="lazy"></iframe>
+        </div>
+        <div class="contact-form-area section-space-bottom-100">
+            <div class="container">
+                <div class="contact-form-wrap">
+                    <form id="contact-form"
+                          class="contact-form"
+                          action="https://whizthemes.com/mail-php/mamunur/harmic/harmic.php">
+                        <h4 class="contact-form-title pb-2 mb-7">
+                            Send Us a Massage
+                        </h4>
+                        <div class="form-field">
+                            <input type="text"
+                                   name="con_name"
+                                   placeholder="Name*"
+                                   class="input-field" />
+                        </div>
+                        <div class="form-field mt-6">
+                            <input type="text"
+                                   name="con_email"
+                                   placeholder="Email*"
+                                   class="input-field" />
+                        </div>
+                        <div class="form-field mt-6">
+                            <textarea name="con_message"
+                                      placeholder="Message"
+                                      class="textarea-field"></textarea>
+                        </div>
+                        <div class="button-wrap mt-8">
+                            <button type="submit"
+                                    value="submit"
+                                    class="btn btn btn-custom-size lg-size btn-primary btn-secondary-hover rounded-0"
+                                    name="submit">
+                                Post Message
+                            </button>
+                        </div>
+                        <p class="form-messege mt-3 mb-0"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- Main Content Area End Here -->
+<style>
+    #container-content {
+        margin-top: 8px;
+        border-top: 1px solid #ccc;
+    }
+
+    #content {
+        padding: 0 108px;
+        margin-bottom: 64px;
+    }
+
+
+        #content .content-heading {
+            font-size: 10px;
+            line-height: 1.5;
+            text-align: center;
+            padding: 0 120px;
+        }
+
+        #content .about-text {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-top: 5px;
+            margin-bottom: 70px;
+        }
+
+        #content .about-heading-1 {
+            font-size: 24px;
+        }
+
+    .content-address .items-knot {
+        padding: 4px 8px;
+        margin: 0 8px;
+        text-decoration: none;
+        color: #4d8a54;
+    }
+
+    .content-address .list-address {
+        padding-top: 32px;
+    }
+
+    .content-address .items-address {
+        display: flex;
+        padding-bottom: 16px;
+    }
+
+    #content .text-items {
+        color: #000;
+        line-height: 1.5;
+    }
+
+    #content .ip-content {
+        padding: 0 16px;
+        border: 1px solid #ccc;
+        border-radius: 24px;
+        line-height: 3.5;
+        min-width: 70%;
+        display: block;
+    }
+
+    #content .input-list {
+        margin: 24px 0;
+    }
+
+    #content .text {
+        min-height: 100px;
+        min-width: 70%;
+        padding: 10px 15px;
+        border-radius: 30px !important;
+        line-height: 1.5;
+        resize: none;
+    }
+
+    #content .content-btn {
+        font-size: 16px;
+        padding: 16px 64px;
+        line-height: 1.5;
+        border-radius: 32px;
+        background-color: #4d8a54;
+        color: #fff;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+        #content .content-btn:hover {
+            background-color: #222;
+        }
+
+</style>
+{% endblock cart_content %}

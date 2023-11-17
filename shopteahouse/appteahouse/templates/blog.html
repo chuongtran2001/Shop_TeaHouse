@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block cart_content %}
+<main class="main-content">
+    <div class="breadcrumb-area breadcrumb-height" data-bg-image="~/customersassets/images/breadcrumb/bg/1-1-1920x373.jpg">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-item">
+                        <h1 class="breadcrumb-heading">Tea House</h1>
+                        <ul>
+                            <li>
+                                <a href="{% url 'home' %}">Home <i class="pe-7s-angle-right"></i></a>
+                            </li>
+                            <li>Tin Tức</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="container-content">
+        <div id="content">
+            <div class="content-news">
+                <div class="content-heading">
+                    <img src="~/customersassets/images/logo/logo.webp" alt="" class="about-heading"></>
+                    <h2 class="about-heading-1">TIN TỨC NỔI BẬT</h2>
+                </div>
+                <div class="content-news-list">
+                    <div class="content-news-items">
+                        <img src="{%static 'images/blog/banner/untitled-6.webp'%}" alt="" class="news-img">
+                        <p class="new-heading">NHÂM NHI CÀ PHÊ BAO LÂU NHƯNG BẠN TẬN MẮT NHÌN KỸ XEM HẠT CÀ PHÊ CHƯA ?</p>
+                        <p class="new-article">Cốc cafe vị đăng đắng, lẫn thêm chút ngọt bùi của sữa đặc sao mà gây nghiện đến thế. Không chỉ cuốn hút ở mùi vị, một cốc cafe sáng còn giúp ngày mới tràn đầy năng lượng với người trẻ, sẵn sàng ch...</p>
+                    </div>
+                    <div class="content-news-items">
+                        <img src="{%static 'images/blog/banner/hailytra.webp'%}" alt="" class="news-img">
+                        <p class="new-heading">Uống 1-4 tách cà phê mỗi ngày giúp bệnh nhân ung thư kéo dài sự sống</p>
+                        <p class="new-article">Uống từ một đến bốn tách cà phê mỗi ngày có thể giúp bệnh nhân ung thư đại trực tràng giai đoạn cuối sống lâu hơn và làm chậm sự tiến triển của bệnh. Phát hiện này được các nhà khoa học rút ra từ...</p>
+                    </div>
+                    <div class="content-news-items">
+                        <img src="{%static 'images/blog/banner/hailytra.webp'%}" alt="" class="news-img">
+                        <p class="new-heading">Dùng cốc giấy đựng cà phê nóng, thứ bạn uống đầy ắp những thứ đáng sợ này</p>
+                        <p class="new-article">Đối với nhiều người, một ngày mới chỉ có thể khởi đầu tốt đẹp bằng một tách cà phê nóng. Nhờ cafein, bộ não dường như không thể nhận được tín hiệu "mệt mỏi", từ đó tạo cho con người ta một nguồn...</p>
+                    </div>
+                    <div class="content-news-items">
+                        <img src="{%static 'images/blog/banner/untitled-4.webp'%}" alt="" class="news-img">
+                        <p class="new-heading">Uống trà có mất ngủ không?</p>
+                        <p class="new-article">Uống trà có mất ngủ không? Đây có lẽ là câu hỏi kinh điển, nhất là với những người mới tập uống trà. Có những người chỉ nhấp một chén trà thôi cũng có thể khiến họ trằn trọc khó ngủ cả đêm. Nhưng...</p>
+                    </div>
+                    <div class="content-news-items">
+                        <img src="{%static 'images/blog/banner/untitled-6.webp' %}" alt="" class="news-img">
+                        <p class="new-heading">Cà phê hay thể dục: Lựa chọn nào giúp đánh bại cơn buồn ngủ tốt hơn?</p>
+                        <p class="new-article">Có hai trường phái để đánh bại những cơn buồn ngủ vào sáng sớm và đầu giờ chiều, hai thời điểm trong ngày mà bạn cần lấy lại sự tỉnh táo của mình nhất. Một số người sẽ chọn giải pháp nhanh chóng ...</p>
+                    </div>
+                    <div class="content-news-items">
+                        <img src="{%static 'images/blog/banner/untitled-4.webp' %}" alt="" class="news-img">
+                        <p class="new-heading">Bạn đã bao giờ thắc mắc tên gọi chính xác của cà phê bắt nguồn từ đâu chưa?</p>
+                        <p class="new-article">Nói về cà phê thì người dân Việt Nam lẫn trên thế giới đều không còn xa lạ gì. Đây được xem là một trong những loại "thức uống quốc dân" được người người, nhà nhà yêu thích bởi vị đắng và thơm lừng đặc trưng....</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<style>
+    #container-content {
+        margin-top: 8px;
+        border-top: 1px solid #ccc;
+    }
+
+    #content {
+        padding: 0 32px;
+    }
+
+        #content .about-content {
+            margin: 0 72px;
+            padding-bottom: 80px;
+        }
+
+        #content .content-heading {
+            line-height: 1.5;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        #content .about-heading {
+            font-style: italic;
+            color: #4d8a54;
+            font-size: 24px;
+        }
+
+        #content .about-heading-1 {
+            font-size: 30px;
+            text-transform: uppercase;
+        }
+
+        #content .content-news {
+            margin: 50px 72px;
+            padding-bottom: 40px;
+        }
+
+        #content .content-news-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #content .content-news-items {
+            width: 33.33333%;
+            padding: 0 8px;
+        }
+
+    .content-news-items .news-img {
+        width: 100%;
+    }
+
+    .content-news-list .new-heading {
+        margin: 10px 0;
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 1.5;
+        text-transform: uppercase;
+    }
+
+        .content-news-list .new-heading:hover {
+            cursor: pointer;
+            color: #4d8a54;
+        }
+
+    .content-news-list .new-article {
+        font-size: 16px;
+        margin-top: 8px;
+        margin-bottom: 32px;
+        line-height: 1.5;
+    }
+</style>
+{% endblock cart_content %}

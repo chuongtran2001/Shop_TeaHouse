@@ -1,0 +1,303 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block banner_slider %}
+<div class="slider-area">
+
+    <!-- Main Slider -->
+       <div class="swiper-container main-slider swiper-arrow with-bg_white">
+       <div class="swiper-wrapper">
+           <div class="swiper-slide animation-style-01">
+               <div class="slide-inner bg-height" style="background: url(https://bizweb.dktcdn.net/100/415/010/themes/894852/assets/slider_1.jpg?1676274744913)">
+               </div>
+           </div>
+       </div>
+
+</div>
+{% endblock banner_slider %}
+{% block main-content %}
+
+<!-- Slider Area End Here -->
+
+<!-- Begin Shipping Area -->
+<div class="shipping-area section-space-top-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="shipping-item">
+                    <div class="shipping-img">
+                        <img src="{%static 'images/shipping/icon/plane.png' %}" alt="Shipping Icon">
+                    </div>
+                    <div class="shipping-content">
+                        <h5 class="title">Giao hàng miễn phí</h5>
+                        <p class="short-desc mb-0">Với đơn hàng 75k</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 pt-6 pt-md-0">
+                <div class="shipping-item">
+                    <div class="shipping-img">
+                        <img src="{%static 'images/shipping/icon/earphones.png' %}" alt="Shipping Icon">
+                    </div>
+                    <div class="shipping-content">
+                        <h5 class="title">Hỗ trợ 24/7</h5>
+                        <p class="short-desc mb-0">Hotline 190012891934</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 pt-6 pt-lg-0">
+                <div class="shipping-item">
+                    <div class="shipping-img">
+                        <img src="{%static 'images/shipping/icon/shield.png' %}" alt="Shipping Icon">
+                    </div>
+                    <div class="shipping-content">
+                        <h5 class="title">Giờ làm việc</h5>
+                        <p class="short-desc mb-0">Từ 6h đến 22h hằng ngày</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Shipping Area End Here -->
+
+<!-- Begin Product Area -->
+<div class="product-area section-space-top-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="all-items" role="tabpanel" aria-labelledby="all-items-tab">
+                        <div class="product-item-wrap row">
+                            {%for product in products %}
+                            <div class="col-xl-3 col-lg-4 col-sm-6">
+                                
+                                <div class="product-item">
+                                    <div class="product-img img-zoom-effect">
+                                        <a href="{% url 'detail'%}?id={{product.id}}" >
+                                            {% if product.image %}
+                                            <img style="width: 100%;height: 300px;object-fit: cover;" class="img-full thumbnail" src="{{product.InmageURL}}" alt="Product Images">
+                                            {% endif %}
+                                        </a>
+                                        <div style="padding: 16px; align-items: center;" class="product-add-action add-btn update-cart" data-product="{{product.id}}" data-action="add">
+                                            <ul>
+                                                <li> 
+                                                    <a href="{% url 'cart' %}"><i  class="pe-7s-cart"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <a class="product-name" href="single-product.html">{{product.name}}</a>
+                                        <div class="price-box pb-1">
+                                            <span class="new-price">{{product.price | floatformat:0}} VND</span>
+                                        </div>
+                                        <div class="rating-box">
+                                            <ul>
+                                                <li><i class="pe-7s-star"></i></li>
+                                                <li><i class="pe-7s-star"></i></li>
+                                                <li><i class="pe-7s-star"></i></li>
+                                                <li><i class="pe-7s-star"></i></li>
+                                                <li><i class="pe-7s-star"></i></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <!--<div class="tab-pane fade" id="fresh-fruits" role="tabpanel" aria-labelledby="fresh-fruits-tab">
+                        <div class="product-item-wrap row">
+                            <div class="col-xl-3 col-lg-4 col-sm-6">
+                                <div class="product-item">
+                                    <div class="product-img img-zoom-effect">
+                                        <a href="single-product.html">
+                                            <img class="img-full" src="{%static 'images/product/medium-size/1-1-270x300.jpg' %}" alt="Product Images">
+                                        </a>
+                                        <div class="product-add-action">
+                                            <ul>
+                                                <li>
+                                                    <a href="cart.html">
+                                                        <i class="pe-7s-cart"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="compare.html">
+                                                        <i class="pe-7s-shuffle"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="wishlist.html">
+                                                        <i class="pe-7s-like"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <a class="product-name" href="single-product.html">Black Pepper Grains</a>
+                                        <div class="price-box pb-1">
+                                            <span class="new-price">$80.00</span>
+                                        </div>
+                                        <div class="rating-box">
+                                            <ul>
+                                                <li><i class="pe-7s-star"></i></li>
+                                                <li><i class="pe-7s-star"></i></li>
+                                                <li><i class="pe-7s-star"></i></li>
+                                                <li><i class="pe-7s-star"></i></li>
+                                                <li><i class="pe-7s-star"></i></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="vegetable" role="tabpanel" aria-labelledby="vegetable-tab">
+                        <div class="product-item-wrap row">
+                            <div class="col-xl-3 col-lg-4 col-sm-6">
+                                <div class="product-item">
+                                    <div class="product-img img-zoom-effect">
+                                        <a href="single-product.html">
+                                            <img class="img-full" src="{%static 'images/product/medium-size/1-1-270x300.jpg' %}" alt="Product Images">
+                                        </a>
+                                        <div class="product-add-action">
+                                            <ul>
+                                                <li>
+                                                    <a href="cart.html">
+                                                        <i class="pe-7s-cart"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="compare.html">
+                                                        <i class="pe-7s-shuffle"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="wishlist.html">
+                                                        <i class="pe-7s-like"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <a class="product-name" href="single-product.html">Black Pepper Grains</a>
+                                        <div class="price-box pb-1">
+                                            <span class="new-price">$80.00</span>
+                                        </div>
+                                        <div class="rating-box">
+                                            <ul>
+                                                <li><i class="pe-7s-star"></i></li>
+                                                <li><i class="pe-7s-star"></i></li>
+                                                <li><i class="pe-7s-star"></i></li>
+                                                <li><i class="pe-7s-star"></i></li>
+                                                <li><i class="pe-7s-star"></i></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="fish-meat" role="tabpanel" aria-labelledby="fish-meat-tab">
+                        <div class="product-item-wrap row">
+                            <div class="col-xl-3 col-lg-4 col-sm-6">
+                                <div class="product-item">
+                                    <div class="product-img img-zoom-effect">
+                                        <a href="single-product.html">
+                                            <img class="img-full" src="{%static 'images/product/medium-size/1-1-270x300.jpg' %}" alt="Product Images">
+                                        </a>
+                                        <div class="product-add-action">
+                                            <ul>
+                                                <li>
+                                                    <a href="cart.html">
+                                                        <i class="pe-7s-cart"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="compare.html">
+                                                        <i class="pe-7s-shuffle"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="wishlist.html">
+                                                        <i class="pe-7s-like"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <a class="product-name" href="single-product.html">Black Pepper Grains</a>
+                                        <div class="price-box pb-1">
+                                            <span class="new-price">$80.00</span>
+                                        </div>
+                                        <div class="rating-box">
+                                            <ul>
+                                                <li><i class="pe-7s-star"></i></li>
+                                                <li><i class="pe-7s-star"></i></li>
+                                                <li><i class="pe-7s-star"></i></li>
+                                                <li><i class="pe-7s-star"></i></li>
+                                                <li><i class="pe-7s-star"></i></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="wheat" role="tabpanel" aria-labelledby="wheat-tab">
+                        <div class="product-item-wrap row">
+                            <div class="col-xl-3 col-lg-4 col-sm-6">
+                                <div class="product-item">
+                                    <div class="product-img img-zoom-effect">
+                                        <a href="single-product.html">
+                                            <img class="img-full" src="{%static 'images/product/medium-size/1-1-270x300.jpg' %}" alt="Product Images">
+                                        </a>
+                                        <div class="product-add-action">
+                                            <ul>
+                                                <li>
+                                                    <a href="cart.html">
+                                                        <i class="pe-7s-cart"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="compare.html">
+                                                        <i class="pe-7s-shuffle"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="wishlist.html">
+                                                        <i class="pe-7s-like"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <a class="product-name" href="single-product.html">Black Pepper Grains</a>
+                                        <div class="price-box pb-1">
+                                            <span class="new-price">$80.00</span>
+                                        </div>
+                                        <div class="rating-box">
+                                            <ul>
+                                                <li><i class="pe-7s-star"></i></li>
+                                                <li><i class="pe-7s-star"></i></li>
+                                                <li><i class="pe-7s-star"></i></li>
+                                                <li><i class="pe-7s-star"></i></li>
+                                                <li><i class="pe-7s-star"></i></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock main-content%}

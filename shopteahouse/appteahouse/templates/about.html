@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block cart_content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main class="main-content">
+        <div class="breadcrumb-area breadcrumb-height"
+             data-bg-image="~/customersassets/images/breadcrumb/bg/1-1-1920x373.jpg">
+            <div class="container h-100">
+                <div class="row h-100">
+                    <div class="col-lg-12">
+                        <div class="breadcrumb-item">
+                            <h2 class="breadcrumb-heading">Giới thiệu</h2>
+                            <ul>
+                                <li>
+                                    <a href="{% url 'home' %}">
+                                        Trang chủ
+                                        <i class="pe-7s-angle-right"></i>
+                                    </a>
+                                </li>
+                                <li>Giới thiệu</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="container-content">
+            <div id="content">
+                <div class="content-about">
+                    <div class="about-section">
+                        <p class="about-text">Tea House hiện là chuỗi cửa hàng đồ uống lớn nhất tại Việt Nam. Những sản phẩm từ Tea House đang như một cơn bão rất nhanh chóng lan rộng ra xung quanh những nước Châu Á. Đi đến đâu sản phẩm của Tea House cũng nhận được sự yêu quý của khách hàng các nước. Đây cũng là loại trà có hương vị khác biệt nhất, đủ tiêu chuẩn và là thương hiệu đồ uống duy nhất để đưa vào giới thiệu tại Shanghai World Expo 2010. </p>
+                        <p class="about-text">Tea House hiện tại đã có chi nhánh cửa hàng tại Đài Loan, Nhật Bản, Trung Quốc, Hồng Kong, Indonesia, Malaisia, Singapor, Việt Nam, Myanma, Brunei, v.v..</p>
+                        <p class="about-text">Trong suốt quá trình phát triển của mình Tea House luôn tập trung vào việc kết hợp và tạo ra những sản phẩm chất lượng cao nhất và phải tạo được sự khác biệt so với những sản phẩm cùng loại trên thị trường. Để làm được điều này, chỉ số chất lượng của tất cả các nguyên liệu và các thành phần được sử dụng trong các sản phẩm của Tea House không chỉ vượt qua được chứng nhận SGS Đài Loan mà họ cũng đã vượt qua 231 bài thử nghiệm chất lượng của SGS Nhật Bản về việc cấp phép nhập khẩu. Dingtea hoàn toàn không sử dụng hương liệu phụ gia để bảo quản. Ngoài tính đặc trưng hơn so với các sản phẩm khác, Sản phẩm của Tea House còn thể hiện văn hóa trà chuyên nghiệp, tinh tế và độc đáo của người Đài Loan.</p>
+                        <p class="about-text">Để luôn có được loại trà tốt nhất, Tea House đã ký hợp đồng với những nông dân ở vùng cao. Chăm sóc tại những vườn chè với nhiệt độ thấp và có độ cao lên đến 1000m, cùng với việc lựa chọn tỉ mỉ một đầu-hai-lá, trà đã pha không chỉ toả ra một hương vị ngọt ngào mà còn có mùi thơm đặc biệt. Phần lớn các loại trà trên thị trường đều có xuất xứ từ Trung Quốc, hương thơm được tăng lên thông qua việc sử dụng các phụ gia, trong khi vị đắng và vị ngọt được điều chỉnh thông qua các chất làm ngọt, do đó chất lượng có sự khác biệt đáng kể so với sản phẩm của Tea House.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <style>
+        #container-content {
+            margin-top: 8px;
+        }
+    
+        #content {
+            padding-bottom:32px;
+        }
+    
+            #content .about-heading {
+                padding: 32px 0;
+            }
+    
+            #content .heading {
+                font-weight: 400;
+                line-height: 1.5;
+            }
+    
+            #content .about-text {
+                font-size: 14px;
+                line-height: 1.5;
+                padding-bottom: 16px;
+            }
+    </style>
+</body>
+</html>
+{% endblock cart_content %}

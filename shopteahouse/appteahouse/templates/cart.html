@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block cart_content %}
+<div class="offcanvas-minicart_wrapper" id="miniCart">
+    <div class="harmic-offcanvas-body">
+        <div class="minicart-content">
+            <div class="minicart-heading">
+                <h4 class="mb-0">Shopping Cart</h4>
+                <a href="#" class="button-close"><i class="pe-7s-close"></i></a>
+            </div>
+            {% for item in items%}
+            <ul class="minicart-list">
+                <li class="minicart-product">
+                    <a class="product-item_remove" href="#"><i
+                        class="pe-7s-close"></i></a>
+                    <a href="shop.html" class="product-item_img">
+                        <img class="img-full" src="{{item.product.InmageURL}}" alt="Product Image">
+                    </a>
+                    <div class="product-item_content">
+                        <a class="product-item_title" href="">{{item.product.name}}</a>
+                        <span class="product-item_quantity">{{item.product.price}}</span>
+                    </div>
+                </li>
+            </ul>
+            {% endfor %}
+        </div>
+        <div class="minicart-item_total">
+            <span>Subtotal</span>
+            <span class="ammount">{{order.get_cart_total}}</span>
+        </div>
+        <div class="group-btn_wrap d-grid gap-2">
+            <a href="{% url 'cart' %}" class="btn btn-secondary btn-primary-hover">View Cart</a>
+            <a href="{% url 'checkout' %}" class="btn btn-secondary btn-primary-hover">Checkout</a>
+        </div>
+    </div>
+</div>
+<main class="main-content">
+    <div class="breadcrumb-area breadcrumb-height" data-bg-image="">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-item">
+                        <h2 class="breadcrumb-heading">Giỏ hàng</h2>
+                        <ul>
+                            <li>
+                                <a href="{% url 'home' %}">Trang chủ<i class="pe-7s-angle-right"></i></a>
+                            </li>
+                            <li>Giỏ hàng</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cart-area section-space-y-axis-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <form action="#">
+                        <div class="table-content table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="product-thumbnail">Hình đại diện</th>
+                                        <th class="cart-product-name">Sản phẩm</th>
+                                        <th class="product-price">Đơn giá</th>
+                                        <th class="product-quantity">Số lượng</th>
+                                        <th class="product-subtotal">Thành tiền</th>
+                                    </tr>
+                                </thead>
+                                {% for item in items%}
+                                <tbody>
+                                    <tr>
+                                        <td class="product-thumbnail">
+                                            <a href="#">
+                                                <img style="width: 90%;" src="{{item.product.InmageURL}} " alt="Cart Thumbnail">
+                                            </a>
+                                        </td>
+                                        <td class="product-name"><a href="">{{item.product.name}}</a></td>
+                                        <td class="product-price"><span class="amount">{{product.price | floatformat:0}} VND</span></td>
+                                        <td class="quantity">
+                                                <p class="quantity">{{item.quantity}}</p>
+                                                <div class="quantity">
+                                                    <img data-product = {{item.product.id}} style="width: 10px;" data-action = 'add' class="chg-quantity update-cart" src="{%static 'images/arrow-down.png' %}">
+
+                                                    <img data-product = {{item.product.id}} style="width: 10px;" data-action = 'remove' class="chg-quantity update-cart" src="{%static 'images/arrow-up.png' %}">
+                                                </div>
+                                            
+                                        </td>
+                                        <td class="product-subtotal"><span class="amount">{{order.get_cart_total}}</span></td>
+                                    </tr>
+
+                                </tbody>
+                                {% endfor %}
+                            </table>
+                        </div>
+                        <!--
+                            <div class="row">
+                            <div class="col-12">
+                                <div class="coupon-all">
+                                    <div class="coupon">
+                                        <input id="coupon_code" class="input-text" name="coupon_code" value="" placeholder="Coupon code" type="text">
+                                        <input class="button mt-xxs-30" name="apply_coupon" value="Apply coupon" type="submit">
+                                    </div>
+                                    <div class="coupon2">
+                                        <input class="button" name="update_cart" value="Update cart" type="submit">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        -->
+                        
+                        <div class="row">
+                            <div class="col-md-5 ml-auto">
+                                <div class="cart-page-total">
+                                    <h2>Tổng tiền và số sản phẩm</h2>
+                                    <ul>
+                                        <li>Sản phẩm đã chọn <span>{{order.get_cart_items}}</span></li>
+                                        <li>Thành tiền <span>{{order.get_cart_total}}</span></li>
+                                    </ul>
+                                    <a href="{% url 'checkout' %}"> checkout</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock cart_content %}
